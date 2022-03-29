@@ -71,6 +71,9 @@ git clone --depth 1 https://github.com/esirplayground/LingTiGameAcc
 git clone --depth 1 https://github.com/esirplayground/luci-app-LingTiGameAcc
 git clone --depth 1 https://github.com/zxlhhyccc/luci-app-v2raya
 git clone --depth 1 https://github.com/thinktip/luci-theme-neobird
+# git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
+git clone --depth 1 https://github.com/Potat0000/luci-app-syncthing
+git clone --depth 1 https://github.com/alloneinfo/luci-app-adguardhome
 
 svn co https://github.com/Lienol/openwrt-package/branches/other/lean/luci-app-autoreboot
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
@@ -99,7 +102,7 @@ svn co https://github.com/liuran001/openwrt-theme/trunk/luci-theme-argon-lr
 svn co https://github.com/openwrt/packages/trunk/net/shadowsocks-libev
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser
-svn co https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
+# svn co https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
 svn co https://github.com/kenzok8/jell/trunk/adguardhome
 svn co https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-atmaterial_new

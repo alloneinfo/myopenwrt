@@ -25,7 +25,10 @@ sed -i '/REVISION:=/{s/.*/REVISION:= $(shell date +'%F')/g}' ./include/version.m
 sed -i "s/%D %V, %C.*/%D %V, %C Mod By Kanny/g" ./package/base-files/files/etc/banner
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+# package/base-files/files/bin/config_generate
+sed -i "s/timezone='UTC'/timezone='Asia/Shanghai'/g" ./package/base-files/files/bin/config_generate
+sed -i "s/ntp.server='0.openwrt.pool.ntp.org'/ntp.server='ntp.aliyun.com'/g" ./package/base-files/files/bin/config_generate
 
 # 替换 luci-theme-argon
 rm -rf ./package/lean/luci-theme-argon
@@ -40,6 +43,8 @@ sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/g" ./
 sed -i "s/dns 'openwrt.org'/dns 'www.jobcn.com'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i "s/ping 'openwrt.org'/ping '119.29.29.29'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
 sed -i "s/route 'openwrt.org'/route '119.29.29.29'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
+
+
 
 # 替换 SmartDNS 并更新版本
 #rm -rf ./feeds/packages/net/smartdns
@@ -71,9 +76,9 @@ sed -i "s/PKG_HASH:=.*/PKG_HASH:=skip/g" /home/kanny/lede/myfeeds/*/Makefile
 # 解决 nginx 下启动 ssr 不成功的问题
 #sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini
 #sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini
-sed -i "/sed -i 's#limit-as/d" ./package/lean/default-settings/files/zzz-default-settings
-sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini" ./package/lean/default-settings/files/zzz-default-settings
-sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/sed -i 's#limit-as/d" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini" ./package/lean/default-settings/files/zzz-default-settings
 
 # 使用 nginx_util add_ssl _lan 转为 ssl 网站后就不用下面这个了
 #sed -i "/sed -i 's#nginx.conf/d" ./package/lean/default-settings/files/zzz-default-settings
