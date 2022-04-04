@@ -75,7 +75,6 @@ git clone --depth 1 https://github.com/zxlhhyccc/luci-app-v2raya
 git clone --depth 1 https://github.com/thinktip/luci-theme-neobird
 # git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
 git clone --depth 1 https://github.com/Potat0000/luci-app-syncthing
-git clone --depth 1 https://github.com/alloneinfo/luci-app-adguardhome
 
 svn co https://github.com/Lienol/openwrt-package/branches/other/lean/luci-app-autoreboot
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
@@ -106,6 +105,8 @@ svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser
 # svn co https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
 svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
+svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
+
 svn co https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-atmaterial_new
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-mcat
