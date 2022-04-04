@@ -63,7 +63,10 @@ git clone --depth 1 https://github.com/kiddin9/luci-app-wizard
 git clone --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 git clone --depth 1 https://github.com/kenzok78/openwrt-minisign
 git clone --depth 1 https://github.com/kenzok78/luci-app-argonne-config
-git clone --depth 1 https://github.com/sundaqiang/openwrt-packages && mv -n openwrt-packages/luci-* ./; rm -rf openwrt-packages
+
+# luci-app-easyupdate  luci-app-nginx-manager luci-app-supervisord luci-app-wolplus
+# git clone --depth 1 https://github.com/sundaqiang/openwrt-packages && mv -n openwrt-packages/luci-* ./; rm -rf openwrt-packages
+
 git clone --depth 1 https://github.com/QiuSimons/openwrt-mos && mvdir openwrt-mos
 git clone -b lede https://github.com/pymumu/luci-app-smartdns
 git clone --depth 1 https://github.com/esirplayground/LingTiGameAcc
@@ -102,7 +105,7 @@ svn co https://github.com/openwrt/packages/trunk/net/shadowsocks-libev
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser
 # svn co https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
-svn co https://github.com/kenzok8/jell/trunk/adguardhome
+svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
 svn co https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-atmaterial_new
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-mcat
@@ -138,6 +141,8 @@ svn co https://github.com/Carseason/openwrt-themedog/trunk/luci/luci-theme-dog
 svn co https://github.com/kiddin9/openwrt-packages/trunk/baidupcs-web
 svn co https://github.com/kiddin9/openwrt-packages/trunk/libcryptopp
 svn co https://github.com/kiddin9/openwrt-packages/trunk/vsftpd-alt
+
+svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/my-default-settings
 
 mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
