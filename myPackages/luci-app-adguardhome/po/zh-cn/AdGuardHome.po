@@ -103,12 +103,18 @@ msgstr "尝试更多变体压缩手段[很慢]"
 
 msgid "bin use less space,but may have compatibility issues"
 msgstr "减小执行文件空间占用，但是可能压缩后有兼容性问题"
-#
+
 msgid "Config Filename and Path"
 msgstr "配置文件名称及路径"
 
-msgid "AdGuardHome config filename"
-msgstr "AdGuardHome 配置文件"
+msgid "Config Path"
+msgstr "配置文件名称及路径"
+
+msgid "AdGuardHome config path"
+msgstr "AdGuardHome 配置文件名称及路径"
+
+msgid "Bin Path"
+msgstr "执行文件名称及路径"
 
 msgid "Work dir"
 msgstr "工作目录"

@@ -63,7 +63,7 @@ endef
 
 ifeq ($(CONFIG_ADGUARDHOME_COMPRESS_GOPROXY),y)
 export GO111MODULE=on
-export GOPROXY=https://goproxy.bj.bcebos.com
+export GOPROXY=https://goproxy.cn,direct
 endif
 
 define Build/Compile
