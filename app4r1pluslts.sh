@@ -17,8 +17,8 @@ git clone --depth=1 https://github.com/pymumu/luci-app-smartdns
 git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/syncthing
 git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
 
-svn co https://github.com/kenzok8/jell/trunk/adguardhome
-git clone --depth 1 https://github.com/alloneinfo/luci-app-adguardhome
+svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
+svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
 
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config
