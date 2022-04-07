@@ -4,8 +4,9 @@ bind_host: 0.0.0.0
 bind_port: 3000
 beta_bind_port: 0
 users:
-- name: root
-  password: $2y$10$FfeQavihMUiXCuJhHuQwy.6EOXDvkXb/S50qI5fXizqarNT/ShhQm
+- name: root  
+  password: $2a$10$Mn0S6BUmM4JPkoNCxw8tqOe15b73Fwrx8pDAt0TnC8gcL2pIuO2Ue
+  # username: root  password: password
 auth_attempts: 5
 block_auth_min: 15
 http_proxy: ""

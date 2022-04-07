@@ -125,23 +125,27 @@ service_triggers() {
 	procd_add_reload_trigger "$CONFIGURATION"
 	[ "$(uci get AdGuardHome.AdGuardHome.redirect)" == "redirect" ] && procd_add_reload_trigger firewall
 }
+
 isrunning(){
-config_load "${CONFIGURATION}"
-_isrunning
-local r=$?
-([ "$r" == "0" ] && echo "running") || ([ "$r" == "1" ] && echo "not run" ) || echo "no bin"
-return $r
+	config_load "${CONFIGURATION}"
+	_isrunning
+	local r=$?
+	([ "$r" == "0" ] && echo "running") || ([ "$r" == "1" ] && echo "not run" ) || echo "no bin"
+	return $r
 }
+
 _isrunning(){
 	config_get binpath $CONFIGURATION binpath "/usr/bin/AdGuardHome"
 	[ ! -f "$binpath" ] && return 2
 	pgrep $binpath 2>&1 >/dev/null && return 0
 	return 1
 }
+
 force_reload(){
 	config_load "${CONFIGURATION}"
 	_isrunning && procd_send_signal "$CONFIGURATION" || start
 }
+
 get_tz()
 {
 	SET_TZ=""
@@ -205,11 +209,13 @@ use_port53()
 	uci commit dhcp
 	/etc/init.d/dnsmasq reload
 }
+
 do_redirect()
 {
 	config_load "${CONFIGURATION}"
 	_do_redirect $1
 }
+
 _do_redirect()
 {
 	local section="$CONFIGURATION"
@@ -221,6 +227,9 @@ _do_redirect()
 		echo -n "1">/var/run/AdGredir
 	else
 		echo -n "0">/var/run/AdGredir
+	fi
+	if [ ! -f "$configpath" ]; then 
+		cp "$workdir/AdGuardHome_template.yaml" "$configpath"
 	fi
 	config_get configpath $CONFIGURATION configpath "/etc/config/AdGuardHome.yaml"
 	AdGuardHome_PORT=$(config_editor "dns.port" "" "$configpath" "1")
@@ -430,14 +439,17 @@ start_service() {
 		fi
 		touch $workdir/data/sessions.db
 		if [ ! -L $workdir/data/sessions.db ]; then
-		mv -f $workdir/data/sessions.db /tmp/sessions.db 2>/dev/null
-		ln -s /tmp/sessions.db $workdir/data/sessions.db 2>/dev/null
+			mv -f $workdir/data/sessions.db /tmp/sessions.db 2>/dev/null
+			ln -s /tmp/sessions.db $workdir/data/sessions.db 2>/dev/null
 		fi
 	fi
 	local ADDITIONAL_ARGS=""
 	config_get binpath $CONFIGURATION binpath "/usr/bin/AdGuardHome"
 
-	mkdir -p ${binpath%/*}
+	# mkdir -p ${binpath%/*}
+	if [ ! -f "$configpath" ]; then 
+		cp "$workdir/AdGuardHome_template.yaml" "$configpath"
+	fi
 	ADDITIONAL_ARGS="$ADDITIONAL_ARGS -c $configpath"
 	ADDITIONAL_ARGS="$ADDITIONAL_ARGS -w $workdir"
 	config_get httpport $CONFIGURATION httpport 3000
@@ -452,7 +464,6 @@ start_service() {
 	if [ -n "$logfile" ]; then
 		ADDITIONAL_ARGS="$ADDITIONAL_ARGS -l $logfile"
 	fi
-
 	if [ ! -f "$binpath" ]; then
 		_do_redirect 0
 		/usr/share/AdGuardHome/update_core.sh 2>&1 >/tmp/AdGuardHome_update.log &
