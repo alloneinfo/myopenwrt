@@ -105,7 +105,7 @@ svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser
 # svn co https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
 svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
-svn co https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
+svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
 
 svn co https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn co https://github.com/kenzok8/litte/trunk/luci-theme-atmaterial_new
