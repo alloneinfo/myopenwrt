@@ -16,7 +16,9 @@ git clone --depth=1 https://github.com/fw876/helloworld  && mvdir helloworld
 # svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
 git clone --depth=1 https://github.com/pymumu/luci-app-smartdns
 
-git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/syncthing
+# git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/syncthing
+svn export https://github.com/openwrt/packages/trunk/utils/syncthing
+# git clone --depth 1 https://github.com/Potat0000/luci-app-syncthing
 git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
 
 svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome

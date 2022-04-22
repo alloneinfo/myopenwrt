@@ -73,8 +73,6 @@ git clone --depth 1 https://github.com/esirplayground/LingTiGameAcc
 git clone --depth 1 https://github.com/esirplayground/luci-app-LingTiGameAcc
 git clone --depth 1 https://github.com/zxlhhyccc/luci-app-v2raya
 git clone --depth 1 https://github.com/thinktip/luci-theme-neobird
-# git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
-git clone --depth 1 https://github.com/Potat0000/luci-app-syncthing
 
 svn export https://github.com/Lienol/openwrt-package/branches/other/lean/luci-app-autoreboot
 svn export https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
@@ -103,9 +101,6 @@ svn export https://github.com/liuran001/openwrt-theme/trunk/luci-theme-argon-lr
 svn export https://github.com/openwrt/packages/trunk/net/shadowsocks-libev
 svn export https://github.com/immortalwrt/luci/trunk/applications/luci-app-aliddns
 svn export https://github.com/immortalwrt/packages/trunk/utils/filebrowser
-# svn export https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
-svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
-svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
 
 svn export https://github.com/immortalwrt/packages/trunk/net/smartdns
 svn export https://github.com/kenzok8/litte/trunk/luci-theme-atmaterial_new
@@ -144,6 +139,19 @@ svn export https://github.com/kiddin9/openwrt-packages/trunk/libcryptopp
 svn export https://github.com/kiddin9/openwrt-packages/trunk/vsftpd-alt
 
 svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/my-default-settings
+
+# svn export https://github.com/kenzok8/jell/trunk/luci-app-adguardhome
+
+# svn export https://github.com/kenzok8/jell/trunk/adguardhome
+svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/adguardhome
+
+# 不用介面了
+# svn export https://github.com/alloneinfo/myopenwrt/trunk/myPackages/luci-app-adguardhome
+
+# 不用介面了
+# git clone --depth 1 https://github.com/Potat0000/luci-app-syncthing
+# git clone --depth 1 https://github.com/alloneinfo/luci-app-syncthing
+
 
 mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
