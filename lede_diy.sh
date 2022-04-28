@@ -31,7 +31,13 @@ sed -i "s/%D %V, %C.*/%D %V, %C Mod By Kanny/g" ./package/base-files/files/etc/b
 # rm -rf ./package/lean/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./package/lean/luci-theme-argon
 rm -rf ./feeds/luci/themes/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./feeds/luci/themes/luci-theme-argon
+git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon -b 18.06 ./feeds/luci/themes/luci-theme-argon
+rm -rf ./feeds/luci/themes/luci-theme-argon/.git
+rm -rf ./feeds/luci/themes/luci-theme-argon/Screenshots
+rm -f ./feeds/luci/themes/luci-theme-argon/.gitattributes
+rm -f ./feeds/luci/themes/luci-theme-argon/.gitignore
+rm -f ./feeds/luci/themes/luci-theme-argon/*.md
+
 
 # 修改默认主题为 luci-theme-argon
 sed -i '/uci set luci.main.mediaurlbase/d' ./package/lean/default-settings/files/zzz-default-settings
@@ -68,14 +74,14 @@ ver=$(basename $(curl -Ls -o /dev/null -w %{url_effective} https://github.com/$1
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$(getversion syncthing/syncthing)/g" ./feeds/packages/utils/syncthing/Makefile
 #sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=$(getversion AdguardTeam/AdGuardHome)/g" /home/kanny/lede/myfeeds/adguardhome/Makefile
 
-sed -i "s/PKG_HASH:=.*/PKG_HASH:=skip/g" /home/kanny/lede/myfeeds/*/Makefile
+# sed -i "s/PKG_HASH:=.*/PKG_HASH:=skip/g" /home/kanny/lede/myfeeds/*/Makefile
 
 # 解决 nginx 下启动 ssr 不成功的问题
 #sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini
 #sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini
-sed -i "/sed -i 's#limit-as/d" ./package/lean/default-settings/files/zzz-default-settings
-sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini" ./package/lean/default-settings/files/zzz-default-settings
-sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/sed -i 's#limit-as/d" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-webui.ini" ./package/lean/default-settings/files/zzz-default-settings
+#sed -i "/exit 0/i\sed -i 's#limit-as = 1000#limit-as = 100000#g' /etc/uwsgi/vassals/luci-cgi_io.ini" ./package/lean/default-settings/files/zzz-default-settings
 
 # 使用 nginx_util add_ssl _lan 转为 ssl 网站后就不用下面这个了
 #sed -i "/sed -i 's#nginx.conf/d" ./package/lean/default-settings/files/zzz-default-settings
