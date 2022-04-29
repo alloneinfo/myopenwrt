@@ -1,0 +1,96 @@
+
+config smartdns
+	option server_name 'smartdns'
+	option dualstack_ip_selection '0'
+	option rr_ttl_min '300'
+	option seconddns_no_rule_addr '0'
+	option seconddns_no_rule_nameserver '0'
+	option seconddns_no_rule_ipset '0'
+	option seconddns_no_rule_soa '0'
+	option coredump '0'
+	option seconddns_server_group 'oversea'
+	option seconddns_no_dualstack_selection '1'
+	option ipv6_server '0'
+	option prefetch_domain '1'
+	option cache_size '10000'
+	option tcp_server '0'
+	option seconddns_tcp_server '0'
+	option port '6053'
+	option serve_expired '0'
+	option force_aaaa_soa '1'
+	option seconddns_no_speed_check '0'
+	option seconddns_no_cache '0'
+	option seconddns_port '6054'
+	option enabled '1'
+	option redirect 'none'
+	list old_redirect 'none'
+	list old_port '6053'
+	list old_enabled '1'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'DGTEL1'
+	option ip '202.96.128.86'
+	option blacklist_ip '0'
+	option server_group 'china'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'DGTEL2'
+	option ip '202.96.134.33'
+	option server_group 'china'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option blacklist_ip '0'
+	option type 'udp'
+	option name 'baidu'
+	option ip '180.76.76.76'
+	option server_group 'china'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'dnspod'
+	option ip '119.29.29.29'
+	option server_group 'china'
+	option blacklist_ip '0'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'PacificSuperNet'
+	option ip '202.14.67.14'
+	option server_group 'oversea'
+	option blacklist_ip '0'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name 'PacificSuperNet1'
+	option ip '202.14.67.4'
+	option server_group 'oversea'
+	option blacklist_ip '0'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option enabled '1'
+	option name 'google'
+	option server_group 'oversea'
+	option blacklist_ip '0'
+	option ip 'tls://8.8.8.8'
+	option type 'tls'
+	option addition_arg '-exclude-default-group'
+
+config server
+	option enabled '1'
+	option name 'cloudfare'
+	option server_group 'oversea'
+	option blacklist_ip '0'
+	option ip 'tls://1.1.1.1'
+	option type 'tls'
+	option addition_arg '-exclude-default-group'
