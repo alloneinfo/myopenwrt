@@ -43,6 +43,8 @@ rm -f ./feeds/luci/themes/luci-theme-argon/*.md
 sed -i '/uci set luci.main.mediaurlbase/d' ./package/lean/default-settings/files/zzz-default-settings
 sed -i '/uci set luci.main.lang=zh_cn/a\uci set luci.main.mediaurlbase=\/luci-static\/argon\/' ./package/lean/default-settings/files/zzz-default-settings
 sed -i "s/option mediaurlbase.*/option mediaurlbase '\/luci-static\/argon'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
+#sed -i 's/Bootstrap theme/Argon theme/g' feeds/luci/collections/luci/Makefile
+#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改测试
 sed -i "s/dns 'openwrt.org'/dns 'www.jobcn.com'/g" ./feeds/luci/modules/luci-base/root/etc/config/luci
